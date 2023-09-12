@@ -13,5 +13,5 @@ Before launching the app in "Adaptable.io" we need to configure the URL routing 
 #  Deploy your app to Adaptable so it can be accessed through the internet
 Finished!, but actually not yet. For my app to be accessed through the internet i need to deploy it first into "Adapatble.io". So first, i go into the website and then login with my git account. Then, i pressed the new app button and connect it to this repository. Next, i chose Python App Template and PostgreSQL as my deployment template and database respectively. Finally, i edit the start command and added my current python version. And then my app is ready and finally can be accessed through the internet.
 
-
+<img src="/assets/image.png">
 
