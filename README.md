@@ -17,9 +17,7 @@ Finished!, but actually not yet. For my app to be accessed through the internet 
 ### Create a diagram explaining the flow of client requests to a Django web app and its response. Also in the diagram, explain the connections between urls.py, views.py, models.py, and the HTML file(s).
 <img src="/assets/image.png">
 <br />
-<br />
-<br />
-<br />
+
 ### What is the purpose of a virtual environment? Can we create a Django web app without a virtual environment?
 A virtual environment is used to isolate packages for different projects. This will be useful when encountering with projects that have lots of dependencies, such as Django itself. It is highly recommended to use a virtual environment when creating a new Django project as it can prevent global installation or random directory installation of files on your computer. And the answer is yes, you can create a django project or web app without virtual environment but it will cause the troubles mentioned before
 ### What is MVC, MVT, and MVVM? Explain the differences between the three.
