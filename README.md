@@ -1,3 +1,5 @@
+## My Deployed App
+fosters-bag.adaptable.app/main/
 ### Create a New Django Project
 Before i started making the django project, i initialized the required items. Which is, the local repository, then installed the requirements, and created the environment. Finally, i initialized the django project and added the .gitignore file for it to be pushed into github later
 ### Create an App with the name 'main' on that project
