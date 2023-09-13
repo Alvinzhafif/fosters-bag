@@ -14,6 +14,7 @@ For this step, i head over to the views.py file. Then, i imported render from dj
 Before launching the app in "Adaptable.io" we need to configure the URL routing so that the website can properly display the content that we wanted. So here, i came back to the urls.py but, different from the first time now i opened it inside of my "Assignment_2" directory instead of the 'main' project directory. From there, i added another import, which is "from django.urls import path, include". This will be used to define the url pattern and to include another URL configuration. then i defined the url of my 'main' app by creating the path for it, and include the configuration of the url from the 'main' directory previously
 ###  Deploy your app to Adaptable so it can be accessed through the internet
 Finished!, but actually not yet. For my app to be accessed through the internet i need to deploy it first into "Adapatble.io". So first, i go into the website and then login with my git account. Then, i pressed the new app button and connect it to this repository. Next, i chose Python App Template and PostgreSQL as my deployment template and database respectively. Finally, i edit the start command and added my current python version. And then my app is ready and finally can be accessed through the internet.
+### Create a diagram explaining the flow of client requests to a Django web app and its response. Also in the diagram, explain the connections between urls.py, views.py, models.py, and the HTML file(s).
 <br />
 <br />
 <br />
