@@ -45,4 +45,13 @@ Before Knowing the differences, what is `XML`, `JSON`, and `HTML` in general?<br
 
 `JSON`or JavaScript Object Notation is a lightweight format for storing and is commonly used for sending datas from a server to a webpage. `JSON` is known to be "self-describing" and easy to understand, this is because `JSON` is represents its datas as a dictionary styled key and value pairs. `JSON` is also very efficient when it comes to parsing, which makes it the perfect candidate for data delivery. <br />
 
-Hyper Text Markup-Language a.k.a `HTML` is a markup language used for creating web pages. Every webpage, is constructed by a `HTML` as the language will provide the display for the website. `HTML` is used to define structures and add interactivity to the web page.
+Hyper Text Markup-Language a.k.a `HTML` is a markup language used for creating web pages. Every webpage, is constructed by a `HTML` as the language will provide the display for the website. `HTML` is used to define structures and add interactivity to the web page.<br />
+
+But in terms of data delivery are the three of this the same?, the answer is no. While `XML` and `JSON` shares the same functionality which is data transmission. `HTML` is used for describing and displaying the data 
+
+### Why is JSON often used in data exchange between modern web applications?
+`JSON` is often used as it excels in 4 categories. First is its easy in terms of readability and parsing. Since `JSON` uses a test-based format, it is easier for us to read the program and for the machine to write the program as well. this can be beneficial, as it will help in parsing for any platform or programming language. Secondly is that `JSON` is lightweight and efficient so that the perfomance of transmitting over minimal bandwith is very optimum. Thirdly, is the Language-independece capability. This allows `JSON` to be used by any programming language there is, which allows easy exchange between either systems or applications. And finally is it is widely supported by any programming language. This makes it easy to fund the library and data when it comes to working with json datas.
+
+
+
+
