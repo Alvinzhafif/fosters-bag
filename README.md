@@ -43,4 +43,6 @@ Before Knowing the differences, what is **XML**, **JSON**, and **HTML** in gener
 **XML** stands for extensible mark-up language. **XML** is designed for carrying out data, this is also one of the reason why **XML** can process difficult datas such as, trees and graphs.
 **XML** focuses on generality, usability, and simplicity. **XML** is configured such that its design focuses on documents, despite that, many web services still uses **XML**. This is due to the fact that, **XML** can representate arbitrary data structures
 <br />
-**JSON** or JavaScript Object Notation is a lightweight format for storing and is commonly used for sending datas from a server to a webpage. **JSON** is known to be "self-describing" and easy to understand, this is because **JSON** is represents its datas as a dictionary styled key and value pairs. **JSON** is also 
+**JSON** or JavaScript Object Notation is a lightweight format for storing and is commonly used for sending datas from a server to a webpage. **JSON** is known to be "self-describing" and easy to understand, this is because **JSON** is represents its datas as a dictionary styled key and value pairs. **JSON** is also very efficient when it comes to parsing, which makes it the perfect candidate for data delivery. 
+<br />
+Hyper Text Markup-Language a.k.a **HTML** is a markup language used for creating web pages. Every webpage, is constructed by a **HTML** as the language will provide the display for the website. **HTML** is used to define structures and add interactivity to the web page.
