@@ -62,7 +62,11 @@ Then, i open the `urls.py` file inside of the `main` folder and import the recen
 The HTML view has been made on the previous step but what about the others?, well for `XML` i head over to the `views.py` file again and import some necessary components and created a new function `show_xml` with a request parameter. Then, i added a return statement to it as an XML. Then, on the `urls.py` i imported that function and add it to the `urlpatterns` for it to be routed into the `URL`. Then, i repeated the same steps for the `JSON` difference is just in the functions name. Next for the `ID` formats, it is basically the same with the previous ones. But change the data variabel and change it with `data = Product.objects.filter(pk=id)`. This allows the use of id's when searching up the items based on an `ID` address.
 
 ### Access the five URLs in point 2 using Postman, take screenshots of the results in Postman, and add them to README.md.
-
+<img src="/assets/pic1.png"><br />
+<img src="/assets/pic2.png"><br />
+<img src="/assets/pic3.png"><br />
+<img src="/assets/pic4.png"><br />
+<img src="/assets/pic5.png"><br />
 
 
 
