@@ -63,10 +63,7 @@ The HTML view has been made on the previous step but what about the others?, wel
 
 ### Access the five URLs in point 2 using Postman, take screenshots of the results in Postman, and add them to README.md.
 <img src="/assets/pic1.png"><br />
-<img src="/assets/pic2.png"><br />
-<img src="/assets/pic3.png"><br />
-<img src="/assets/pic4.png"><br />
-<img src="/assets/pic5.png"><br />
+
 
 
 
