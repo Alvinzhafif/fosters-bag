@@ -1,7 +1,7 @@
 ## My Deployed App
 https://fosters-bag.adaptable.app/main/
 ### Create a New Django Project
-Before i started making the django project, i initialized the required items. Which is, the local repository, then installed the requirements, and created the environment. Finally, i initialized the django project and added the **.gitignore** file for it to be pushed into github later
+Before i started making the django project, i initialized the required items. Which is, the local repository, then installed the requirements, and created the environment. Finally, i initialized the django project and added the '.gitignore' file for it to be pushed into github later
 ### Create an App with the name 'main' on that project
 For this step, first, i initialized the virtual environment again and create the main app by inputting 'python manage.py startapp main' on to the terminal. Next, i updated the settings.py so that the app main is now registered on that project
 ### Create a URL routing configuration to access the 'main' App
