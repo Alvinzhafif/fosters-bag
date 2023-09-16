@@ -1,3 +1,7 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
 <h1>Foster's Bag</h1>
 
 <h3>Name:</h3>
@@ -14,4 +18,41 @@
 <p>Weapon name: {{ weapon }}</p>
 <p>Description: {{weapon_desc}}</p>
 <p>In stock: {{amount}}</p>
+
+
+<table>
+    <tr>
+        <th>Name</th>
+        <th>Price</th>
+        <th>Description</th>
+        <th>Date Added</th>
+        <th>Amount</th>
+        <th>Type</th>
+    </tr>
+
+    {% comment %} Below is how to show the product data {% endcomment %}
+
+    {% for product in products %}
+        <tr>
+            <td>{{product.name}}</td>
+            <td>{{product.price}}</td>
+            <td>{{product.description}}</td>
+            <td>{{product.date_added}}</td>
+            <td>{{product.amount}}</td>
+            <td>{{product.type}}</td>
+
+        </tr>
+    {% endfor %}
+</table>
+
+<br />
+
+<a href="{% url 'main:create_product' %}">
+    <button>
+        Add New Product
+    </button>
+</a>
+
+
+{% endblock content %}
 
