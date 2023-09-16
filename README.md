@@ -1,7 +1,7 @@
 ## My Deployed App
 https://fosters-bag.adaptable.app/main/
 ### Create a New Django Project
-Before i started making the django project, i initialized the required items. Which is, the local repository, then installed the requirements, and created the environment. Finally, i initialized the django project and added the .gitignore file for it to be pushed into github later
+Before i started making the django project, i initialized the required items. Which is, the local repository, then installed the requirements, and created the environment. Finally, i initialized the django project and added the **.gitignore** file for it to be pushed into github later
 ### Create an App with the name 'main' on that project
 For this step, first, i initialized the virtual environment again and create the main app by inputting 'python manage.py startapp main' on to the terminal. Next, i updated the settings.py so that the app main is now registered on that project
 ### Create a URL routing configuration to access the 'main' App
@@ -22,3 +22,4 @@ Finished!, but actually not yet. For my app to be accessed through the internet 
 A virtual environment is used to isolate packages for different projects. This will be useful when encountering with projects that have lots of dependencies, such as Django itself. It is highly recommended to use a virtual environment when creating a new Django project as it can prevent global installation or random directory installation of files on your computer. And the answer is yes, you can create a django project or web app without virtual environment but it will cause the troubles mentioned before
 ### What is MVC, MVT, and MVVM? Explain the differences between the three.
 MVC(Model-View-Controller), MVT(Model-View-Template), and MVvM(Model-View-ViewModel) are all architectural design patterns that are used for seperating the concerns of an application. In MVC the model and view interact directly, this however, can lead to tight coupling and resulting in difficulty on extending the app. In MVT the model and view interact through template, the template that contains an HTML code for the view file and renders the HTML files data. While in the MVVM, the model and view interact through the view model. In this model the view does not interact directly with the model, but it can receives data from the model.
+### What is the difference between POST form and GET form in Django?
