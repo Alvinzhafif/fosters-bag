@@ -24,7 +24,7 @@ Finished!, but actually not yet. For my app to be accessed through the internet 
 
 ### Create a diagram explaining the flow of client requests to a Django web app and its response. Also in the diagram, explain the connections between urls.py, views.py, models.py, and the HTML file(s).
 <img src="/assets/image.png">
---
+
 
 ### What is the purpose of a virtual environment? Can we create a Django web app without a virtual environment?
 A virtual environment is used to isolate packages for different projects. This will be useful when encountering with projects that have lots of dependencies, such as Django itself. It is highly recommended to use a virtual environment when creating a new Django project as it can prevent global installation or random directory installation of files on your computer. And the answer is yes, you can create a django project or web app without virtual environment but it will cause the troubles mentioned before
@@ -32,17 +32,17 @@ A virtual environment is used to isolate packages for different projects. This w
 ### What is MVC, MVT, and MVVM? Explain the differences between the three.
 MVC(Model-View-Controller), MVT(Model-View-Template), and MVvM(Model-View-ViewModel) are all architectural design patterns that are used for seperating the concerns of an application. In MVC the model and view interact directly, this however, can lead to tight coupling and resulting in difficulty on extending the app. In MVT the model and view interact through template, the template that contains an HTML code for the view file and renders the HTML files data. While in the MVVM, the model and view interact through the view model. In this model the view does not interact directly with the model, but it can receives data from the model.
 ### What is the difference between POST form and GET form in Django?
-**POST** and **GET** form are the only HTTP methods to use when dealing with forms in **Django**
---
-**POST** in general, should be used anytime we want to change anything in the database. A positive difference between **POST** and **GET** is that, **POST** encodes the datas so that it can send for transmission. This also affect that, the data values will not be visible. Another one is that the **POST** method doesnt have any restriction in data types, which mean it can send any form of data. An example of a **POST** form request is logging in into a website. When users logs in into a website they will usually need to enter their passwords or other kinds of private informations, such as bank accounts, credit card numbers ot more. By using **POST** their datas would be secured and encoded so it would not be vulnarable.
---
+**POST** and **GET** form are the only HTTP methods to use when dealing with forms in **Django**<br />
+
+**POST** in general, should be used anytime we want to change anything in the database. A positive difference between **POST** and **GET** is that, **POST** encodes the datas so that it can send for transmission. This also affect that, the data values will not be visible. Another one is that the **POST** method doesnt have any restriction in data types, which mean it can send any form of data. An example of a **POST** form request is logging in into a website. When users logs in into a website they will usually need to enter their passwords or other kinds of private informations, such as bank accounts, credit card numbers ot more. By using **POST** their datas would be secured and encoded so it would not be vulnarable.<br />
+
 **GET** on the other hand bundles the data into a string to compose an URL. This also means that **GET** can only use one form of data types, which is strings. The composed string will contain adresses to the object that is requested. An example of a **GET** form request would be searching an item in an online shop or searching something up on a search engine. This will involve in requesting the address of the requested object, as for searching up items in an online shop we will be redrected to the shop page conbtaining the item we requested, same with searching up articles or news in a search engine.
 ###  What are the main differences between XML, JSON, and HTML in the context of data delivery?
-Before Knowing the differences, what is **XML**, **JSON**, and **HTML** in general?
---
+Before Knowing the differences, what is **XML**, **JSON**, and **HTML** in general?<br /> 
+
 **XML** stands for extensible mark-up language. **XML** is designed for carrying out data, this is also one of the reason why **XML** can process difficult datas such as, trees and graphs.
-**XML** focuses on generality, usability, and simplicity. **XML** is configured such that its design focuses on documents, despite that, many web services still uses **XML**. This is due to the fact that, **XML** can representate arbitrary data structures
---
-**JSON** or JavaScript Object Notation is a lightweight format for storing and is commonly used for sending datas from a server to a webpage. **JSON** is known to be "self-describing" and easy to understand, this is because **JSON** is represents its datas as a dictionary styled key and value pairs. **JSON** is also very efficient when it comes to parsing, which makes it the perfect candidate for data delivery. 
---
+**XML** focuses on generality, usability, and simplicity. **XML** is configured such that its design focuses on documents, despite that, many web services still uses **XML**. This is due to the fact that, **XML** can representate arbitrary data structures<br />
+
+**JSON** or JavaScript Object Notation is a lightweight format for storing and is commonly used for sending datas from a server to a webpage. **JSON** is known to be "self-describing" and easy to understand, this is because **JSON** is represents its datas as a dictionary styled key and value pairs. **JSON** is also very efficient when it comes to parsing, which makes it the perfect candidate for data delivery. <br />
+
 Hyper Text Markup-Language a.k.a **HTML** is a markup language used for creating web pages. Every webpage, is constructed by a **HTML** as the language will provide the display for the website. **HTML** is used to define structures and add interactivity to the web page.
