@@ -38,11 +38,11 @@ MVC(Model-View-Controller), MVT(Model-View-Template), and MVvM(Model-View-ViewMo
 
 **GET** on the other hand bundles the data into a string to compose an URL. This also means that **GET** can only use one form of data types, which is strings. The composed string will contain adresses to the object that is requested. An example of a **GET** form request would be searching an item in an online shop or searching something up on a search engine. This will involve in requesting the address of the requested object, as for searching up items in an online shop we will be redrected to the shop page conbtaining the item we requested, same with searching up articles or news in a search engine.
 ###  What are the main differences between XML, JSON, and HTML in the context of data delivery?
-Before Knowing the differences, what is **XML**, **JSON**, and **HTML** in general?<br /> 
+Before Knowing the differences, what is `XML`, `JSON`, and `HTML` in general?<br /> 
 
-**XML** stands for extensible mark-up language. **XML** is designed for carrying out data, this is also one of the reason why **XML** can process difficult datas such as, trees and graphs.
-**XML** focuses on generality, usability, and simplicity. **XML** is configured such that its design focuses on documents, despite that, many web services still uses **XML**. This is due to the fact that, **XML** can representate arbitrary data structures<br />
+`XML` stands for extensible mark-up language. `XML` is designed for carrying out data, this is also one of the reason why `XML` can process difficult datas such as, trees and graphs.
+`XML` focuses on generality, usability, and simplicity. `XML` is configured such that its design focuses on documents, despite that, many web services still uses `XML`. This is due to the fact that, `XML` can representate arbitrary data structures<br />
 
-**JSON** or JavaScript Object Notation is a lightweight format for storing and is commonly used for sending datas from a server to a webpage. **JSON** is known to be "self-describing" and easy to understand, this is because **JSON** is represents its datas as a dictionary styled key and value pairs. **JSON** is also very efficient when it comes to parsing, which makes it the perfect candidate for data delivery. <br />
+`JSON`or JavaScript Object Notation is a lightweight format for storing and is commonly used for sending datas from a server to a webpage. `JSON` is known to be "self-describing" and easy to understand, this is because `JSON` is represents its datas as a dictionary styled key and value pairs. `JSON` is also very efficient when it comes to parsing, which makes it the perfect candidate for data delivery. <br />
 
-Hyper Text Markup-Language a.k.a **HTML** is a markup language used for creating web pages. Every webpage, is constructed by a **HTML** as the language will provide the display for the website. **HTML** is used to define structures and add interactivity to the web page.
+Hyper Text Markup-Language a.k.a `HTML` is a markup language used for creating web pages. Every webpage, is constructed by a `HTML` as the language will provide the display for the website. `HTML` is used to define structures and add interactivity to the web page.
