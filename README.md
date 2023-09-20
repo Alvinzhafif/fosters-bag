@@ -1,5 +1,4 @@
 ## My Deployed App
-<hr>
 https://fosters-bag.adaptable.app/main/
 
 ### Create a New Django Project
