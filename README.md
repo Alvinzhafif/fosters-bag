@@ -78,15 +78,15 @@ The HTML view has been made on the previous step but what about the others?, wel
 ### Access the five URLs in point 2 using Postman, take screenshots of the results in Postman, and add them to README.md.
 <hr>
 
-#### Accessing json
+#### 1. Accessing json
 <img src="/assets/pic1.png"><br />
-#### Accessing xml
+#### 2. Accessing xml
 <img src="/assets/pic2.png"><br />
-#### Accessing html
+#### 3. Accessing html
 <img src="/assets/pic3.png"><br />
-#### Accessing json by id
+#### 4. Accessing json by id
 <img src="/assets/pic4.png"><br />
-#### Accessing xml by id
+#### 5. Accessing xml by id
 <img src="/assets/pic5.png"><br />
 
 
