@@ -119,6 +119,7 @@ the difference between both are the following, <br />
 Authentication: used for authenticating the user, Works through passwords, pins, or any other security information, takes place first, is visible to the user, and is changeable by the user<br />     
 Authorization: used for authorizing the user's access, Works through the settings that are implemented in the code, takes place after authentication, and is not visible and changeable for the user           
 
+### What are cookies in website? How does Django use cookies to manage user session data?
 
 
 
