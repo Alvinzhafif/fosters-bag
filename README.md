@@ -62,7 +62,7 @@ MVC(Model-View-Controller), MVT(Model-View-Template), and MVVM (Model-View-ViewM
 ###  What are the main differences between XML, JSON, and HTML in the context of data delivery?
 <hr>
 
-Before Knowing the differences, what is `XML`, `JSON`, and `HTML` in general?<br /> 
+Before Knowing the differences, what is `XML`, `JSON`, and `HTML` in general?
 
 `XML` stands for extensible mark-up language. `XML` is designed for carrying out data, this is also one of the reason why `XML` can process difficult datas such as, trees and graphs.
 `XML` focuses on generality, usability, and simplicity. `XML` is configured such that its design focuses on documents, despite that, many web services still uses `XML`. This is due to the fact that, `XML` can representate arbitrary data structures<br />
