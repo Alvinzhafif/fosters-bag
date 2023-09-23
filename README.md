@@ -119,7 +119,12 @@ the difference between both are the following, <br />
 Authentication: used for authenticating the user, Works through passwords, pins, or any other security information, takes place first, is visible to the user, and is changeable by the user<br />     
 Authorization: used for authorizing the user's access, Works through the settings that are implemented in the code, takes place after authentication, and is not visible and changeable for the user           
 
-### What are cookies in website? How does Django use cookies to manage user session data?
+### What are cookies on a website? How does Django use cookies to manage user session data?
+<hr>
+Cookies are small pieces of information stored in the client's browser. Generally, it is used for storing the user's data temporarily or permanently. Cookies have an expiry date which will make the data they hold be removed when the time has passed, Django provides a method for setting and fetching Cookies.<br />
+
+
+
 
 
 
