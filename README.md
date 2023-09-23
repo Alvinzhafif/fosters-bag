@@ -2,6 +2,7 @@
 https://fosters-bag.adaptable.app/main/
 
 ### Create a New Django Project
+<hr>
 
 Before I started making the Django project, I initialized the required items. Which is, the local repository, then installed the requirements, and created the environment. Finally, I initialized the Django project and added the `.gitignore` file for it to be pushed into GitHub later
 
