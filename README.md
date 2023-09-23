@@ -54,7 +54,7 @@ MVC(Model-View-Controller), MVT(Model-View-Template), and MVVM (Model-View-ViewM
 ### What is the difference between POST form and GET form in Django?
 <hr>
 
-**POST** and **GET** forms are the only HTTP methods to use when dealing with forms in **Django**< br//>
+**POST** and **GET** forms are the only HTTP methods to use when dealing with forms in **Django**< br />
 
 **POST** in general, should be used anytime we want to change anything in the database. A positive difference between **POST** and **GET** is that, **POST** encodes the data so that it can be sent for transmission. This also affects that, the data values will not be visible. Another one is that the **POST** method doesn't have any restriction in data types, which means it can send any form of data. An example of a **POST** form request is logging in to a website. When users log in to a website they will usually need to enter their passwords or other kinds of private information, such as bank accounts, credit card numbers and more. By using **POST** their data would be secured and encoded so it would not be vulnerable.<br />
 
