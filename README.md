@@ -115,14 +115,10 @@ The disadvantage of using `UserCreationForm` is that it uses the Django form cla
 ### What is the difference between authentication and authorization in the Django application? Why are both important?
 <hr>
 both authentication and authorization are important in Django, authentication can be used for verifying if the user is really who they are and authorization can be used to determine what kind of access that user has.<br />
-the difference between both are the following: <br />
--------------- -------------
-Authentication Authorization          
- ------------- -------------
-| used for authenticating the user    | used for authorizing the users access |
-| Works through passwords, pins, or any other security information  | Works through the settings that are implemented in the code | 
-| takes place first |   takes place after authentication    | 
-| visible to the user and is changeable | not visible and changeable for the user |
+the difference between both are the following, <br />
+Authentication: used for authenticating the user, Works through passwords, pins, or any other security information, takes place first, is visible to the user, and is changeable by the user<br />     
+Authorization: used for authorizing the user's access, Works through the settings that are implemented in the code, takes place after authentication, and is not visible and changeable for the user           
+
 
 
 
