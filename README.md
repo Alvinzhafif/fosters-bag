@@ -116,8 +116,9 @@ The disadvantage of using `UserCreationForm` is that it uses the Django form cla
 <hr>
 both authentication and authorization are important in Django, authentication can be used for verifying if the user is really who they are and authorization can be used to determine what kind of access that user has.<br />
 the difference between both are the following: <br />
-| Authentication| Authorization |         
-| ------------- |-------------|
+-------------- -------------
+Authentication Authorization          
+ ------------- -------------
 | used for authenticating the user    | used for authorizing the users access |
 | Works through passwords, pins, or any other security information  | Works through the settings that are implemented in the code | 
 | takes place first |   takes place after authentication    | 
