@@ -5,7 +5,7 @@
 <h1>Foster's Bag</h1>
 
 <h3>Name:</h3>
-<p>{{name}}</p>
+<p>{{name_student}}</p>
 
 <h3>Class:</h3>
 <p>{{class}}</p>
@@ -50,6 +50,14 @@
 <a href="{% url 'main:create_product' %}">
     <button>
         Add New Product
+    </button>
+</a>
+
+<h5>Last login session: {{ last_login }}</h5>
+
+<a href="{% url 'main:logout' %}">
+    <button>
+        Logout
     </button>
 </a>
 
