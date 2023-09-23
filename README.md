@@ -5,13 +5,13 @@ https://fosters-bag.adaptable.app/main/
 <hr>
 Before I started making the Django project, I initialized the required items. Which is, the local repository, then installed the requirements, and created the environment. Finally, I initialized the Django project and added the `.gitignore` file for it to be pushed into GitHub later
 
-### Create an App with the name 'main' on that project
+### Create an App with the name `main` on that project
 <hr>
 For this step, first, I initialized the virtual environment again and created the main app by inputting `python manage.py startapp main` onto the terminal. Next, I updated the settings.py so that the app main is now registered on that project
 
 ### Create a URL routing configuration to access the 'main' App
 <hr>
-Now, I can create a file named `urls.py inside` of my project's (main) directory. Then, I imported the `import path` from the Django library, this will be used for routing the URL to the appropriate view function that will be made afterward. Next, I imported `import show_main` which will be used to take a request and turn it into a response. For my current project, it will be for rendering the main app. Then, I inputted the name for my app `main` and created the path of the URL pattern to display my `main` app later 
+Now, I can create a file named `urls.py` inside of my project's (main) directory. Then, I imported the `import path` from the Django library, this will be used for routing the URL to the appropriate view function that will be made afterward. Next, I imported `import show_main` which will be used to take a request and turn it into a response. For my current project, it will be for rendering the main app. Then, I inputted the name for my app `main` and created the path of the URL pattern to display my `main` app later 
 
 ### Create a model on the 'main' app 
 <hr>
