@@ -119,13 +119,15 @@ the difference between both are the following, <br />
 Authentication: used for authenticating the user, Works through passwords, pins, or any other security information, takes place first, is visible to the user, and is changeable by the user<br />     
 Authorization: used for authorizing the user's access, Works through the settings that are implemented in the code, takes place after authentication, and is not visible and changeable for the user           
 
-### What are cookies on a website? How does Django use cookies to manage user session data?
+### What are `cookies` on a website? How does Django use cookies to manage user session data?
 <hr>
+
 `cookies` are small pieces of information stored in the client's browser. Generally, it is used for storing the user's data temporarily or permanently. Cookies have an expiry date which will make the data they hold be removed when the time has passed, Django provides a method for setting and fetching `cookies`.<br />
 Django uses `cookies` by containing a special session id to identify each browser and each of its associated session with the site, by default the actual session is stored in the database. This is way safer compared to storing data in `cookies`, as the data in cookies has a possibility to be accessed by hackers or any malicious user.
 
 ### Are  `cookies` secure to use? Is there potential risk to be aware of?
 <hr>
+
 `cookies` itself do not pose any security risk, but it can be used by malicious users as a method to exploit your personal datas. A great potential risk would be, that `cookies` can introduce you to dangerous websites and a very rare case it could introduce you to malware as well. This could happen if your `cookies` was exposed to cyber criminals.<br />
 In conclusion the biggest threat that `cookies` poses is a security risk, like i mentioned before is not the cookie itself that is dangerous but the possibilities of malicious user exploiting it. Currently the most advanced `cookies`
 is the one used in marketing, the `cookies` for this category has the ability to track the users over time. Those tracking can come from many sources, counting ad impressions, views and clicks, even limiting pop ups and ad sequence. This `cookies` are the one that can do user profiling / tracking of website preferences
