@@ -132,6 +132,17 @@ Django uses `cookies` by containing a special session id to identify each browse
 In conclusion the biggest threat that `cookies` poses is a security risk, like i mentioned before is not the cookie itself that is dangerous but the possibilities of malicious user exploiting it. Currently the most advanced `cookies`
 is the one used in marketing, the `cookies` for this category has the ability to track the users over time. Those tracking can come from many sources, counting ad impressions, views and clicks, even limiting pop ups and ad sequence. This `cookies` are the one that can do user profiling / tracking of website preferences
 
+###  Implement registration, login, and logout functions to allow users to access the previous application.
+<hr>
+
+#### 1. Create a registration<br />
+before i start this step, i activated my virtual environmen first to make it easier to test the web page later on, for activating it i go to the local repository on my command prompt and use the command `enc\Scripts\activate.bat` on the cmd. Now onto the first step, i went over to my `views.py` file, this file plays a crucial lore as every function such as create product is located inside here. Next i imported a few components, `redirect`, `UserCreationForm`, and `messages`. The `redirect` will be used for redirecting us to the webpaage once the form has been saved, the `UserCreationForm` will be used for creating the forms easily as it is a built in form from Django itself, and `messages` will be used to display a message once we have succesfully filled the form. Next i created a function called `register` that will be used for creating a registration, the function will have a `request` parameter as it will process and pass the user's input, next i call the `UserCreationForm()` function and make an if else statement for assuring that the user fills in the correct and necessary datas, if the user fills in the correct datas the form will be saved, a message of successfully creating the account will be shown, and we will be redirected back to the page.<br />
+Next, i created a new `HTML` file in the main/templates folder, then i created a statement so that this file inherits the `main.html` file. Next i added the title in the `meta` block, created a class named login for my container, and created the title of the registration page. Next, i created the form element with the method `'POST'` for creating the registration form, then added a CSRF(cross-site-request-forgery) for anticipating against CSRF attacks,  then i make the form results into an HTML table for generating the necessary HTML `form` fields
+#### 2. 
+
+
+
+
 
 
 
