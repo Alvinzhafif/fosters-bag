@@ -159,6 +159,17 @@ For this step i opened my `models.py` file inside of the `main` subdirectory, an
 
 for this step we need to implement `cookies`, for the displaying the information of the logged-in user we can simply add the element name in to the `show_main` function that contains the data of who is the person/user's name that is logging in into the website. To add `cookies` i head over to the `views.py` file and imported three functions from the library, `datetime` (for displaying the date and time when the users logged in into the account), 'Httpresponseredirect`for redirecting or forwarding the URL, and  `reverse` for retrieving the `url`. Next, inside of `login_user` funnction in the if statement i added a response object for showing the contents for the main web page. Then i set a cookie that can track the last login of the user. Then inside of the `show_main` function i added the element last login to track the request using a `cookie`, then i modify the `logout` function as well, and added the same response object to show the contents of the main web page and added the line `response.delete_cookie` to delete the last login cookie when the user logs out. Then inside of the `main.html` file, i added the line last log in to display the last time the user logged in into the web page 
 
+### Explain the purpose of some CSS element selector and when to use it.
+<hr>
+
+`CSS` are used for styling your webpage such as creating custom positioning of the text, recoloring the text, styling images, and many more. `CSS` uses selectors to identify which part of the HTML that you want to style, there are a few selectors that `CSS` implements, such as select by id, select by class, select universally, and many more. Select by id can be used when you are only trying to modify one unique element, such as a text for the title of the webpage, to create an id we can use the pund sign `#` and add the unique id name after it before making the content of the `CSS` file. Select by class can be used when you are trying to style one whole class of an attribute, to create the class select we can add the dot sign `.` and the specific class name we want to style. And select universally is used when we want to edit the whole html page, such as for changing the whole webpage's text color or for positioning the contents, to crete a universal select we can add the asterisk sign `*` before filling out the content of the `CSS` styling file
+
+###  Explain some of the HTML5 tags that you know.
+<hr>
+
+There are many `HTML5` tags that can be used, each with their own unique specifications. A few of their examples would be the `<img>`, `<hr>`, `<p>`, `<h>`, and `<table>`. the `<img>` tag is used to specify an image, this is commonly used for adding images to the webpage for a banner,background,and any other image needs for the webpage. the `<hr>` is used for specifying a horizontal break line, usually it is used in blogs for seperating paragraphs and adding neatness to the webpage. The `<p>` tag is used for specifying a paragraph, in which every sentence inside of the tag until it reaches the end `</p>` will be considered as a paragraph. The `<h>` tab
+
+
 
 
 
