@@ -167,14 +167,16 @@ for this step we need to implement `cookies`, for the displaying the information
 ###  Explain some of the HTML5 tags that you know.
 <hr>
 
-There are many `HTML5` tags that can be used, each with their own unique specifications. A few of their examples would be the `<img>`, `<hr>`, `<p>`, `<h>`, and `<table>`. the `<img>` tag is used to specify an image, this is commonly used for adding images to the webpage for a banner,background,and any other image needs for the webpage. the `<hr>` is used for specifying a horizontal break line, usually it is used in blogs for seperating paragraphs and adding neatness to the webpage. The `<p>` tag is used for specifying a paragraph, in which every sentence inside of the tag until it reaches the end `</p>` will be considered as a paragraph. The `<h>` tab
+There are many `HTML5` tags that can be used, each with their own unique specifications. A few of their examples would be the `<img>`, `<hr>`, `<p>`, `<h>`, and `<table>`. the `<img>` tag is used to specify an image, this is commonly used for adding images to the webpage for a banner,background,and any other image needs for the webpage. the `<hr>` is used for specifying a horizontal break line, usually it is used in blogs for seperating paragraphs and adding neatness to the webpage. The `<p>` tag is used for specifying a paragraph, in which every sentence inside of the tag until it reaches the end `</p>` will be considered as a paragraph. The `<h>` tag is used to specify a heading, it is commonly used for titles and to mark important points of the webpage. The `<h>` tag is followed by a number ranging from 1-6, ranked from smallest to biggest. the `<table>` tag is used for specifying tables, this tables is usually used to display data in a neat order or in a tabular like form on the webpage.
 
+### What are the differences between margin and padding?
+<hr>
 
+`padding` is the space between the content and the border of an element. `padding` is valuable in making additional space inside an element, keeping it at a set distance from other aspects of a website. Using `padding` is extremely beneficial when you need to separate text boxes and images while also keeping them aligned.<br>
+`margin` on the other hand is the space around the border of an element. `margin` surrounds an element and informs the web browser on how many spaces should be left between the element and the external margin of the webpage. `margins` can also be used to set distance between two distinct elements.<br>
+The difference between `margin` and `padding` is that, `padding` represents the amount of inner space that element has, while `margin` is the amount of whitespace surrounding that element. `margin` are also usually unable to be set automatically, while for `padding` it is possible to set it automatically. and lastly, `margin` would not be affected by styling from another element, while `padding` can be affected 
 
-
-
-
-
+###  What are the differences between the CSS framework Tailwind and Bootstrap? When should we use Bootstrap rather than Tailwind, and vice versa?
 
 
 
