@@ -10,4 +10,5 @@ class Product(models.Model):
     price = models.IntegerField(default=0)
     description = models.TextField()
     type = models.CharField(max_length=255, null=True)
+    rarity= models.CharField(max_length=255, null=True)
 # Create your models here.

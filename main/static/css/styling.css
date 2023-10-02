@@ -1,0 +1,10 @@
+.container{
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 300px;
+    color: blueviolet;
+}
+.title{
+    display: flex;
+    align-content: center;
+}

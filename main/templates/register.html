@@ -6,9 +6,19 @@
 
 {% block content %}  
 
-<div class = "login">
-    
-    <h1>Register</h1>  
+{%load static%}
+<head>
+    <link rel="stylesheet" type="text/css" media="screen" href="{%static 'css/style.css'%}">
+</head>
+<body id="bg" style="background-image: url('{%static 'main/bg3.jpeg'%}');">
+
+
+{%load static%}
+<head>
+    <link rel="stylesheet" type="text/css" media="screen" href="{%static 'css/colors.css'%}">
+</head>
+<div class = "login" id="text">
+    <h1>Become A Citizen</h1>  
 
         <form method="POST" >  
             {% csrf_token %}  

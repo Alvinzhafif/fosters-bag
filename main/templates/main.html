@@ -1,23 +1,75 @@
 {% extends 'base.html' %}
 
 {% block content %}
+    <div>
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+            <div class="container-fluid">
+              <a class="navbar-brand" href="#">Alvin Zhafif Afilla PBP KKI</a>
+              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+              </button>
+              <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                  <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="#">Home</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="#">Link</a>
+                  </li>
+                  <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                      Dropdown
+                    </a>
+                    <ul class="dropdown-menu">
+                      <li><a class="dropdown-item" href="#">Action</a></li>
+                      <li><a class="dropdown-item" href="#">Another action</a></li>
+                      <li><hr class="dropdown-divider"></li>
+                      <li><a class="dropdown-item" href="#">Something else here</a></li>
+                    </ul>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link disabled" aria-disabled="true">Disabled</a>
+                  </li>
+                </ul>
+                <form class="d-flex" role="search">
+                  <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                  <button class="btn btn-outline-success" type="submit">Search</button>
+                </form>
+              </div>
+            </div>
+          </nav>
+    </div>
+
+{%load static%}
+<head>
+    <link rel="stylesheet" type="text/css" media="screen" href="{%static 'css/style.css'%}">
+</head>
+<body id="bg" style="background-image: url('{%static 'main/bg.jpeg'%}');">
+
 
 <h1>Foster's Bag</h1>
-
-<h3>Name:</h3>
-<p>{{name_student}}</p>
-
-<h3>Class:</h3>
-<p>{{class}}</p>
 
 <h4>Project Description:</h4>
 <p>{{ general }}</p>
 <p>{{ lore }}</p>
 
-<h4>Since there is nothing to show currently here's a preview of one of his sold items,</h4>
-<p>Weapon name: {{ weapon }}</p>
-<p>Description: {{weapon_desc}}</p>
-<p>In stock: {{amount}}</p>
+{%load static%}
+<head>
+    <link rel="stylesheet" type="text/css" media="screen" href="{%static 'css/colors.css'%}">
+</head>
+<h4>There are 4 item rarity, ranked based on these colors</h4>
+<div id="text2">
+  <p>Uncommon</p>
+</div>
+<div id="text3">
+  <p>Rare</p>
+</div>
+<div id="text4">
+  <p>Epic</p>
+</div>
+<div id="text5">
+  <p>Legendary</p>
+</div>
 
 
 <table>
@@ -28,6 +80,7 @@
         <th>Date Added</th>
         <th>Amount</th>
         <th>Type</th>
+        <th>Rarity</th>
     </tr>
 
     {% comment %} Below is how to show the product data {% endcomment %}
@@ -40,6 +93,18 @@
             <td>{{product.date_added}}</td>
             <td>{{product.amount}}</td>
             <td>{{product.type}}</td>
+            <td>{{product.rarity}}
+                <a href="{% url 'main:edit_product' product.pk %}">
+                    <button>
+                        Edit
+                    </button>
+                </a>
+                <a href="{% url 'main:delete_product' product.pk %}">
+                    <button>
+                        Delete
+                    </button>
+                </a>
+            </td>
 
         </tr>
     {% endfor %}
@@ -62,5 +127,8 @@
 </a>
 
 
+
+
 {% endblock content %}
 
+</body>
