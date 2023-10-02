@@ -177,6 +177,12 @@ There are many `HTML5` tags that can be used, each with their own unique specifi
 The difference between `margin` and `padding` is that, `padding` represents the amount of inner space that element has, while `margin` is the amount of whitespace surrounding that element. `margin` are also usually unable to be set automatically, while for `padding` it is possible to set it automatically. and lastly, `margin` would not be affected by styling from another element, while `padding` can be affected 
 
 ###  What are the differences between the CSS framework Tailwind and Bootstrap? When should we use Bootstrap rather than Tailwind, and vice versa?
+<hr>
+
+`Bootstrap` is a`CSS` framework that is used for building responsive and mobile-first projects on the web, `Bootstrap` is a component based framework, which means it comes with prebuilt components and includes other utilities for layering displays,spacing etc.<br>
+`Tailwind` is a `CSS` framework that is used for building utility-first framework 
+  
+
 
 
 
