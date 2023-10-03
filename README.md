@@ -180,9 +180,8 @@ The difference between `margin` and `padding` is that, `padding` represents the 
 <hr>
 
 `Bootstrap` is a`CSS` framework that is used for building responsive and mobile-first projects on the web, `Bootstrap` is a component based framework, which means it comes with prebuilt components and includes other utilities for layering displays,spacing etc.<br>
-`Tailwind` is a `CSS` framework that is used for building utility-first framework 
-  
-
+`Tailwind` is a `CSS` framework that is used for building utility-first framework for builidng rapidly custom user interfaces. Unlike other frameworks `Tailwind` is low-level, which means it offers you collection of classes that can be implemented to your `HTML` or webpage directly without touching `CSS`.<br>
+The `Bootstrap` framework compels the developer to follow a certain template like structure. The developer themselves could overwrite the  `Bootstrap` framework but that would result in redundance as there is not realky any need to use the given framework. This can lead to similarity in `Bootstrap` framework developer's website, as 
 
 
 
