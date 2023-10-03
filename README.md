@@ -188,10 +188,12 @@ While using `Tailwind` allows the developer to customize the web page as they pl
 <hr>
 
 Here are the changes i made:
+<img src="/assets/pic6.png"><br />
+<img src="/assets/pic7.png"><br />
+<img src="/assets/pic8.png"><br />
+<img src="/assets/pic9.png"><br />
 
-
-
-
+In a nutshell the changes i made is adding backgrounds,text colors, and card display using `Bootstrap`. The `CSS` files are then stored inside of the new `static` folder located inside of the `main` folder.
 
 
 
