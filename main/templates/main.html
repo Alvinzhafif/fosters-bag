@@ -107,6 +107,7 @@
                 <p class="card-text">{{product.description}}</p>
                 <p class="card-text">Amount: {{product.amount}}</p>
                 <p class="card-text">Price: {{product.price}} zels</p>
+                <p class="card-text">Date added: {{product.date_added}}</p>
               </div>
             </div>
                   <a href="{% url 'main:edit_product' product.pk %}">
@@ -118,9 +119,11 @@
                     <button>
                         Delete
                     </button>
+
                 </a>
+                <p class="card-text"><td>{{product.name}} is recently added</td></p>
             </td>
-            </div>
+          </div>
         </tr>
     {% endfor %}
 </table>
@@ -134,12 +137,6 @@
 </a>
 
 <h5>Last login session: {{ last_login }}</h5>
-
-<a href="{% url 'main:logout' %}">
-    <button>
-        Logout
-    </button>
-</a>
 
 {% endblock content %}
 

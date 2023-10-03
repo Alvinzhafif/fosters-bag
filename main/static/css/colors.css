@@ -13,3 +13,9 @@
 #text5{
     color: gold;
 }
+#text6{
+    color: black;
+}
+tr:Last-child > td{ 
+    color: red;
+}

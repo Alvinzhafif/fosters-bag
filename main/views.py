@@ -26,7 +26,7 @@ def show_main(request):
         'name': request.user.username,
         'general': 'This is a project that is under work, this will be an rpg-themed inventory management project',
         'lore': 'Foster is a merchant in the city of sorus, he is known to be the best trader in the city with never before seen items and weapons.However, currently he has problems with managing his inventory and needs your help',
-        'categories': 'There are 4 item categories listed by Foster, Sword, Bow, Shields, and Throwables. Melee weapons will fall to the Sword category, bows and other long range weapon falls to the Bow category, armors and any other defense item falls to the Shield category, and throwable projectiles fall in the Throwables category. Any other types of item will be considered Miscellaneous',
+        'categories': 'There are 4 item categories listed by Foster, Sword, Bow, Shields, and Throwables. Melee weapons will fall to the Sword category, bows and other long range weapon falls to the Bow category, armors and any other defense item falls to the Shield category, and throwable projectiles fall in the Throwables category. Any other types of item will be considered Miscellaneous. Recently added products will be marked with a red text below of the cards',
         'products': products,
         'last_login': request.COOKIES['last_login'],
     }
