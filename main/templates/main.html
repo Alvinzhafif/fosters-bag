@@ -1,5 +1,12 @@
 {% extends 'base.html' %}
 
+{% block meta %}
+  {% load static %}
+  <title>Foster's bag</title>
+  <link rel="stylesheet", href="{% static 'css/style.css' %}">
+  <link rel="stylesheet", href="{% static 'css/colors.css' %}">
+
+{% endblock meta %}
 {% block content %}
     <div>
         <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
@@ -25,10 +32,6 @@
           </nav>
     </div>
 
-{%load static%}
-<head>
-    <link rel="stylesheet" type="text/css" media="screen" href="{%static 'css/style.css'%}">
-</head>
 <body id="bg" style="background-image: url('{%static 'main/bg.jpeg'%}');">
 
 
@@ -44,10 +47,6 @@
 <h4>Category Classification</h4>
 <p>{{categories}}</p>
 
-{%load static%}
-<head>
-    <link rel="stylesheet" type="text/css" media="screen" href="{%static 'css/colors.css'%}">
-</head>
 <h4>There are 4 item rarity, ranked based on these colors</h4>
 <div id="text2">
   <p>Uncommon</p>
@@ -63,70 +62,53 @@
 </div>
 
 
-<table>
-
-    {% comment %} Below is how to show the product data {% endcomment %}
-
-    {% for product in products %}
-        <tr>
-            <div class="card" style="width: 18rem;">
-              {%load static%}
-              <head>
-                  <link rel="stylesheet" type="text/css" media="screen" href="{%static 'css/style.css'%}">
-              </head>
-              {% if product.type == "Sword"%}
-                <p class="card-text">{{product.type}}</p>
-                <img class="card-img-top" src="{% static 'main/sword.jpeg' %}" alt="Card image cap">
-              {% elif product.type == "Bow"%}
-                <p class="card-text">{{product.type}}</p>
-                <img class="card-img-top" src="{% static 'main/bow.jpeg' %}" alt="Card image cap">
-              {% elif product.type == "Shield"%}
-                <p class="card-text">{{product.type}}</p>
-                <img class="card-img-top" src="{% static 'main/shield.jpeg' %}" alt="Card image cap">
-              {% elif product.type == "Throwables"%}
-                <p class="card-text">{{product.type}}</p>
-                <img class="card-img-top" src="{% static 'main/throwable.jpeg' %}" alt="Card image cap">
-              {% else %}
-                <p class="card-text">Miscellaneous</p>
-                <img class="card-img-top" src="{% static 'main/huh.jpeg' %}" alt="Card image cap">
-              {% endif %}
-              <div class="card-body">
-                {%load static%}
-                <head>
-                    <link rel="stylesheet" type="text/css" media="screen" href="{%static 'css/colors.css'%}">
-                </head>
-                {% if product.rarity == "Uncommon"%}
-                  <h5 class="card-title" id="text2">{{product.name}}</h5>
-                {% elif product.rarity == "Rare" %}
-                  <h5 class="card-title" id="text3">{{product.name}}</h5>
-                {% elif product.rarity == "Epic" %}
-                  <h5 class="card-title" id="text4">{{product.name}}</h5>
-                {% elif product.rarity == "Legendary"%}
-                  <h5 class="card-title" id="text5">{{product.name}}</h5>
-                {% endif %}
-                <p class="card-text">{{product.description}}</p>
-                <p class="card-text">Amount: {{product.amount}}</p>
-                <p class="card-text">Price: {{product.price}} zels</p>
-                <p class="card-text">Date added: {{product.date_added}}</p>
+<table id="product_table"></table>
+    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+          <div class="modal-content">
+              <div class="modal-header">
+                  <h1 class="modal-title fs-5" id="exampleModalLabel">Add New Product</h1>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
               </div>
-            </div>
-                  <a href="{% url 'main:edit_product' product.pk %}">
-                    <button>
-                        Edit
-                    </button>
-                </a>
-                <a href="{% url 'main:delete_product' product.pk %}">
-                    <button>
-                        Delete
-                    </button>
-
-                </a>
-                <p class="card-text"><td>{{product.name}} is recently added</td></p>
-            </td>
+              <div class="modal-body">
+                  <form id="form" onsubmit="return false;">
+                      {% csrf_token %}
+                      <div class="mb-3">
+                          <label for="name" class="col-form-label">Name:</label>
+                          <input type="text" class="form-control" id="name" name="name"></input>
+                      </div>
+                      <div class="mb-3">
+                          <label for="price" class="col-form-label">Price:</label>
+                          <input type="number" class="form-control" id="price" name="price"></input>
+                      </div>
+                      <div class="mb-3">
+                          <label for="description" class="col-form-label">Description:</label>
+                          <textarea class="form-control" id="description" name="description"></textarea>
+                      </div>
+                      <div class="mb-3">
+                          <label for="description" class="col-form-label">Amount:</label>
+                          <textarea class="form-control" id="amount" name="amount"></textarea>
+                      </div>
+                      <div class="mb-3">
+                        <label for="description" class="col-form-label">Type:</label>
+                        <textarea class="form-control" id="type" name="type"></textarea>
+                    </div>
+                    <div class="mb-3">
+                      <label for="description" class="col-form-label">Rarity:</label>
+                      <textarea class="form-control" id="rarity" name="rarity"></textarea>
+                  </div>
+                  </form>
+              </div>
+              <div class="modal-footer">
+                  <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                  <button type="button" class="btn btn-primary" id="button_add" data-bs-dismiss="modal">Add Product</button>
+              </div>
           </div>
-        </tr>
-    {% endfor %}
-</table>
+      </div>
+    </div>
+
+    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">Add Product by AJAX</button>
+   
 
 <br />
 
@@ -137,6 +119,44 @@
 </a>
 
 <h5>Last login session: {{ last_login }}</h5>
+
+<script>
+  async function getProducts() {
+      return fetch("{% url 'main:get_product_json' %}").then((res) => res.json())
+  }
+  async function refreshProducts() {
+        document.getElementById("product_table").innerHTML = ""
+        const products = await getProducts()
+        products.forEach((item) => {
+          
+            htmlString += `\n<tr>
+              <div class="card" style="width: 18rem;">
+              `
+              if (item.fields.type == "Sword") {
+                htmlString += `<p class="card-text">${item.fields.type}</p>
+                <img class="card-img-top" src="{% static 'main/sword.jpeg' %}" alt="Card image cap">
+                `
+              }
+              htmlString += '</div>'
+        htmlString += '</tr>' 
+        })
+        
+        document.getElementById("product_table").innerHTML = htmlString
+    }
+
+    refreshProducts()
+
+    function addProduct() {
+        fetch("{% url 'main:add_product_ajax' %}", {
+            method: "POST",
+            body: new FormData(document.querySelector('#form'))
+        }).then(refreshProducts)
+
+        document.getElementById("form").reset()
+        return false
+    }
+    document.getElementById("button_add").onclick = addProduct
+</script>
 
 {% endblock content %}
 
