@@ -112,18 +112,13 @@
 
 <br />
 
-<a href="{% url 'main:create_product' %}">
-    <button>
-        Add New Product
-    </button>
-</a>
-
 <h5>Last login session: {{ last_login }}</h5>
 
 <script>
   async function getProducts() {
       return fetch("{% url 'main:get_product_json' %}").then((res) => res.json())
   }
+  let htmlString = ""
   async function refreshProducts() {
         document.getElementById("product_table").innerHTML = ""
         const products = await getProducts()
@@ -137,7 +132,56 @@
                 <img class="card-img-top" src="{% static 'main/sword.jpeg' %}" alt="Card image cap">
                 `
               }
-              htmlString += '</div>'
+              else if (item.fields.type == "Bow") {
+                htmlString += `<p class="card-text">${item.fields.type}</p>
+                <img class="card-img-top" src="{% static 'main/bow.jpeg' %}" alt="Card image cap">
+                `
+              }
+              else if (item.fields.type == "Throwable") {
+                htmlString += `<p class="card-text">${item.fields.type}</p>
+                <img class="card-img-top" src="{% static 'main/throwable.jpeg' %}" alt="Card image cap">
+                `
+              }
+              else if (item.fields.type == "Shield") {
+                htmlString += `<p class="card-text">${item.fields.type}</p>
+                <img class="card-img-top" src="{% static 'main/shield.jpeg' %}" alt="Card image cap">
+                `
+              }
+              else{
+                htmlString += `<p class="card-text">Miscellaneous</p>
+                <img class="card-img-top" src="{% static 'main/huh.jpeg' %}" alt="Card image cap">
+                `
+              }
+              `
+              <div class="card-body">
+               `
+               if(item.fields.rarity == "Uncommon"){
+                htmlString += `<p class="card-text" id="text2">${item.fields.name}</p>
+                `
+               }
+               else if(item.fields.rarity == "Rare"){
+                htmlString += `<p class="card-text" id="text3">${item.fields.name}</p>
+                `
+               }
+               else if(item.fields.rarity == "Epic"){
+                htmlString += `<p class="card-text" id="text4">${item.fields.name}</p>
+                `
+               }
+               else if(item.fields.rarity == "Legendary"){
+                htmlString += `<p class="card-text" id="text5">${item.fields.name}</p>
+                `
+               }
+               
+              htmlString += `<p class="card-text">${item.fields.description}</p>
+              `
+              htmlString += `<p class="card-text">Price: ${item.fields.price}</p>
+              `
+              htmlString += `<p class="card-text">Amount left: ${item.fields.amount}</p> 
+              `
+              htmlString += `<p class="card-text">Date-added: ${item.fields.date_added}</p> 
+              `
+               htmlString += '</div>'
+            htmlString += '</div>'
         htmlString += '</tr>' 
         })
         
