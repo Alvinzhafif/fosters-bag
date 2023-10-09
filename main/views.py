@@ -126,7 +126,7 @@ def delete_product(request, id):
     return HttpResponseRedirect(reverse('main:show_main'))
 
 def get_product_json(request):
-    product_item = Product.objects.all()
+    product_item = Product.objects.filter(user=request.user)
     return HttpResponse(serializers.serialize('json', product_item))
 
 @csrf_exempt
@@ -135,17 +135,25 @@ def add_product_ajax(request):
         name = request.POST.get("name")
         price = request.POST.get("price")
         description = request.POST.get("description")
+        amount = request.POST.get("amount")
         type = request.POST.get("type")
         rarity = request.POST.get("rarity")
         user = request.user
 
-        new_product = Product(name=name, price=price, description=description, user=user, type=type, rarity=rarity)
+        new_product = Product(name=name, price=price, description=description, user=user, type=type, rarity=rarity, amount=amount)
         new_product.save()
 
         return HttpResponse(b"CREATED", status=201)
 
     return HttpResponseNotFound()
 
+@csrf_exempt
+def del_product_ajax(request, id):
+    if request.method == 'POST':
+        product = Product.objects.get(pk = id)
+        product.delete()
+        return HttpResponse(b"DELETED",status = 201)
+    return HttpResponseNotFound()
 
 
 # Create your views here.

@@ -123,7 +123,6 @@
         document.getElementById("product_table").innerHTML = ""
         const products = await getProducts()
         products.forEach((item) => {
-          
             htmlString += `\n<tr>
               <div class="card" style="width: 18rem;">
               `
@@ -180,6 +179,8 @@
               `
               htmlString += `<p class="card-text">Date-added: ${item.fields.date_added}</p> 
               `
+              htmlString += `<button onclick="delete_product(${item.pk})">Delete Product by AJAX</button>
+              `
                htmlString += '</div>'
             htmlString += '</div>'
         htmlString += '</tr>' 
@@ -187,8 +188,6 @@
         
         document.getElementById("product_table").innerHTML = htmlString
     }
-
-    refreshProducts()
 
     function addProduct() {
         fetch("{% url 'main:add_product_ajax' %}", {
@@ -199,7 +198,15 @@
         document.getElementById("form").reset()
         return false
     }
+    function delete_product(id){
+      fetch("/delete-product-ajax/" + id, {
+        method: "POST",
+    }).then(refreshProducts)
+      return false
+    }
+    
     document.getElementById("button_add").onclick = addProduct
+    refreshProducts()
 </script>
 
 {% endblock content %}
