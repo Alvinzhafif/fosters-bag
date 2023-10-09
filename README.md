@@ -268,6 +268,147 @@ this function implements `AJAX` for adding the products into the web page, if th
 After adding the function i head over to my `urls.py` in the `main` subdirectory and added the url routing to the `get_product` and the `add_product_ajax` function as well 
 
 3. Now i need to modify the `main.html` file in the the `templates` directory in side of the `main` directory
+   ```
+   table id="product_table"></table>
+    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+          <div class="modal-content">
+              <div class="modal-header">
+                  <h1 class="modal-title fs-5" id="exampleModalLabel">Add New Product</h1>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+              </div>
+              <div class="modal-body">
+                  <form id="form" onsubmit="return false;">
+                      {% csrf_token %}
+                      <div class="mb-3">
+                          <label for="name" class="col-form-label">Name:</label>
+                          <input type="text" class="form-control" id="name" name="name"></input>
+                      </div>
+                      <div class="mb-3">
+                          <label for="price" class="col-form-label">Price:</label>
+                          <input type="number" class="form-control" id="price" name="price"></input>
+                      </div>
+                      <div class="mb-3">
+                          <label for="description" class="col-form-label">Description:</label>
+                          <textarea class="form-control" id="description" name="description"></textarea>
+                      </div>
+                      <div class="mb-3">
+                          <label for="description" class="col-form-label">Amount:</label>
+                          <textarea class="form-control" id="amount" name="amount"></textarea>
+                      </div>
+                      <div class="mb-3">
+                        <label for="description" class="col-form-label">Type:</label>
+                        <textarea class="form-control" id="type" name="type"></textarea>
+                    </div>
+                    <div class="mb-3">
+                      <label for="description" class="col-form-label">Rarity:</label>
+                      <textarea class="form-control" id="rarity" name="rarity"></textarea>
+                  </div>
+                  </form>
+              </div>
+              <div class="modal-footer">
+                  <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                  <button type="button" class="btn btn-primary" id="button_add" data-bs-dismiss="modal">Add Product</button>
+              </div>
+          </div>
+      </div>
+    </div>
+
+    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">Add Product by AJAX</button>
+   ```
+   this is a modal display applied using the implementation of `Bootstrap` this will display the fields of the creation form using `AJAX`
+   then at the bottom i added the button to display the button for adding the new product.
+   Then i added the following script
+   ```
+      <script>
+        async function getProducts() {
+            return fetch("{% url 'main:get_product_json' %}").then((res) => res.json())
+        }
+        let htmlString = ""
+        async function refreshProducts() {
+              document.getElementById("product_table").innerHTML = ""
+              const products = await getProducts()
+              products.forEach((item) => {
+                
+                  htmlString += `\n<tr>
+                    <div class="card" style="width: 18rem;">
+                    `
+                    if (item.fields.type == "Sword") {
+                      htmlString += `<p class="card-text">${item.fields.type}</p>
+                      <img class="card-img-top" src="{% static 'main/sword.jpeg' %}" alt="Card image cap">
+                      `
+                    }
+                    else if (item.fields.type == "Bow") {
+                      htmlString += `<p class="card-text">${item.fields.type}</p>
+                      <img class="card-img-top" src="{% static 'main/bow.jpeg' %}" alt="Card image cap">
+                      `
+                    }
+                    else if (item.fields.type == "Throwable") {
+                      htmlString += `<p class="card-text">${item.fields.type}</p>
+                      <img class="card-img-top" src="{% static 'main/throwable.jpeg' %}" alt="Card image cap">
+                      `
+                    }
+                    else if (item.fields.type == "Shield") {
+                      htmlString += `<p class="card-text">${item.fields.type}</p>
+                      <img class="card-img-top" src="{% static 'main/shield.jpeg' %}" alt="Card image cap">
+                      `
+                    }
+                    else{
+                      htmlString += `<p class="card-text">Miscellaneous</p>
+                      <img class="card-img-top" src="{% static 'main/huh.jpeg' %}" alt="Card image cap">
+                      `
+                    }
+                    `
+                    <div class="card-body">
+                     `
+                     if(item.fields.rarity == "Uncommon"){
+                      htmlString += `<p class="card-text" id="text2">${item.fields.name}</p>
+                      `
+                     }
+                     else if(item.fields.rarity == "Rare"){
+                      htmlString += `<p class="card-text" id="text3">${item.fields.name}</p>
+                      `
+                     }
+                     else if(item.fields.rarity == "Epic"){
+                      htmlString += `<p class="card-text" id="text4">${item.fields.name}</p>
+                      `
+                     }
+                     else if(item.fields.rarity == "Legendary"){
+                      htmlString += `<p class="card-text" id="text5">${item.fields.name}</p>
+                      `
+                     }
+                     
+                    htmlString += `<p class="card-text">${item.fields.description}</p>
+                    `
+                    htmlString += `<p class="card-text">Price: ${item.fields.price}</p>
+                    `
+                    htmlString += `<p class="card-text">Amount left: ${item.fields.amount}</p> 
+                    `
+                    htmlString += `<p class="card-text">Date-added: ${item.fields.date_added}</p> 
+                    `
+                     htmlString += '</div>'
+                  htmlString += '</div>'
+              htmlString += '</tr>' 
+              })
+              
+              document.getElementById("product_table").innerHTML = htmlString
+          }
+      
+          refreshProducts()
+      
+          function addProduct() {
+              fetch("{% url 'main:add_product_ajax' %}", {
+                  method: "POST",
+                  body: new FormData(document.querySelector('#form'))
+              }).then(refreshProducts)
+      
+              document.getElementById("form").reset()
+              return false
+          }
+          document.getElementById("button_add").onclick = addProduct
+      </script>
+   ```
+   This `JavaScript` will be used for adding the products and implementing the card display i have made for assignment 5. This implement the async method which means there will be no need for the user to refresh the web page when they add a new product into the web page 
  
 
 
