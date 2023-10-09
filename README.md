@@ -232,6 +232,8 @@ the difference of both implementation are as follows:
 In my opinion using `Fetch API` is better as it is more modern and suited to modern web pages. However if a web page is already made using a `JQuery` implementation there's no need for changing it into `Fetch API` as it is still customizeable and not out-of-date for the modern web page.
 
 ### Explain how you implemented the checklist above step-by-step (not just following the tutorial).
+<hr>
+
 1. First i implemented the following code into the `views.py` file
    ```
     def get_product_json(request):
@@ -264,6 +266,7 @@ In my opinion using `Fetch API` is better as it is more modern and suited to mod
 
 this function implements `AJAX` for adding the products into the web page, if the request is post every fields data will then be retrieved and made into the product using the    `new_product` statement, and if the request is post then the HttpCreated response is returned. If the request is not post a 404 Not Found error message is shown.
 After adding the function i head over to my `urls.py` in the `main` subdirectory and added the url routing to the `get_product` and the `add_product_ajax` function as well 
+
 3. Now i need to modify the `main.html` file in the the `templates` directory in side of the `main` directory
  
 
