@@ -242,7 +242,7 @@ In my opinion using `Fetch API` is better as it is more modern and suited to mod
    respecitvely. And `HttpResponse` is used for serializing the `Django` into `JSon` and retrieving it as a response.
 
 2. Next, i implemented an add product function using `AJAX` in `views.py` file
-   ```
+```
   @csrf_exempt
   def add_product_ajax(request):
     if request.method == 'POST':
@@ -260,7 +260,7 @@ In my opinion using `Fetch API` is better as it is more modern and suited to mod
         return HttpResponse(b"CREATED", status=201)
 
     return HttpResponseNotFound()
-    ```
+```
     this function implements `AJAX` for adding the products into the web page, if the request is post every fields data will then be retrieved and made into the product using the `      
   `new_product` statement, and if the request is post then the HttpCreated response is returned. If the request is not post a 404 Not Found error message is shown.
   After adding the function i head over to my `urls.py` in the `main` subdirectory and added the url routing to the `get_product` and the `add_product_ajax` function as well 
