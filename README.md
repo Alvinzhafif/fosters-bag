@@ -195,7 +195,18 @@ Here are the changes i made:
 
 In a nutshell the changes i made is adding backgrounds,text colors, and card display using `Bootstrap`. The `CSS` files are then stored inside of the new `static` folder located inside of the `main` folder.
 
+### Explain the difference between asynchronous programming and synchronous programming.
+<hr>
 
+`Asynchronous` programming is a non blocking architecture, which means the execution of a program is not dependant on another. This also implies that multiple tasks can run simultaneously.<br>
+`Synchronous` programming is a blocking architecture, which means the execution of a program is dependant on the other. A task must be answered before it can successfully iterate through the next task<br>
+In addition towards their difference is listed as follows:
+* Asynchronous is multi-thread, which means operations or programs can run in parallel.
+* Synchronous is a single-thread, so only one operation or program will run at a time.
+* Asynchronous is non-blocking, which means it will send multiple requests to a server.
+* Synchronous is blocking — it will only send the server one request at a time and wait for that request to be answered by the server.
+* Asynchronous increases throughput because multiple operations can run at the same time.
+* Synchronous is slower and more methodical.
 
 
 
