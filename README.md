@@ -208,10 +208,64 @@ In addition towards their difference is listed as follows:
 * Asynchronous increases throughput because multiple operations can run at the same time.
 * Synchronous is slower and more methodical.
 
+### In the implementation of JavaScript and AJAX, there is an implemented paradigm called the event-driven programming paradigm. Explain what this paradigm means and give one example of its implementation in this assignment.
+<hr>
 
+an `Event-driven programming paradigm` is a method of programming where the flow of the program is determined by the events that occur throughout the program. This means that the code will not execute a program without an event occurring, making the program itself more responsive as it is not running constantly.<br>
+An example of its implementation in this assignment is the `create_product`form made using `AJAX`, the form will wait for the user to input the required fields then after pressing submit the program will be executed and the item will appear on the web page.
 
+### Explain the implementation of asynchronous programming in AJAX.
+<hr>
 
+`AJAX` stands for Asynchronous JavaScript and XML, `AJAX` itself executes the data transfer in the background which makes the necessity of reloading a web page for executing a command unnecessary. `AJAX` implements Asynchronous programming by making asynchronous requests to the `HTTP` server, in addition the `JavaScript` in `AJAX` has the `async` and `await` command. Both of this command will make the program wait for an input and then be executed after, while also making the web page still accessible without the necessity of refreshing the web page.
 
+### In this semester, the implementation of AJAX is done using the Fetch API rather than the jQuery library. Compare the two technologies and write down your opinion which technology is better to use.
+<hr>
+
+Before we can compare both technologies it is best to know what is `Fetch API` and `JQuery library`.<br>
+`Fetch API` is an `AJAX-JavaScript` implementation that provides an interface for accessing and manipulating parts of the protocol, those parts can be requests or responses.<br>
+`JQuery library` is an `AJAX-JavaScript` implementation that provides the same features as `Fetch API` however, it is older and more native to `JavaScript`.<br>
+the difference of both implementation are as follows:
+* the `Fetch API` is a more modern and advanced version of the `JQuery library` so performance-wise it is better.
+* in terms of community `JQuery library` is more popular, this implies there are tons of library Plugins made by the community.
+<br>
+In my opinion using `Fetch API` is better as it is more modern and suited to modern web pages. However if a web page is already made using a `JQuery` implementation there's no need for changing it into `Fetch API` as it is still customizeable and not out-of-date for the modern web page.
+
+### Explain how you implemented the checklist above step-by-step (not just following the tutorial).
+1. First i implemented the following code into the `views.py` file
+   ```
+    def get_product_json(request):
+    product_item = Product.objects.filter(user=request.user)
+    return HttpResponse(serializers.serialize('json', product_item))
+    ```
+   This is a new function that is added to get the `product` using `JSon`, then i filter the the products so that the products displayed in the web page will be seperated for each users
+   respecitvely. And `HttpResponse` is used for serializing the `Django` into `JSon` and retrieving it as a response.
+
+2. Next, i implemented an add product function using `AJAX` in `views.py` file
+   ```
+  @csrf_exempt
+  def add_product_ajax(request):
+    if request.method == 'POST':
+        name = request.POST.get("name")
+        price = request.POST.get("price")
+        description = request.POST.get("description")
+        amount = request.POST.get("amount")
+        type = request.POST.get("type")
+        rarity = request.POST.get("rarity")
+        user = request.user
+
+        new_product = Product(name=name, price=price, description=description, user=user, type=type, rarity=rarity, amount=amount)
+        new_product.save()
+
+        return HttpResponse(b"CREATED", status=201)
+
+    return HttpResponseNotFound()
+    ```
+    this function implements `AJAX` for adding the products into the web page, if the request is post every fields data will then be retrieved and made into the product using the `      
+  `new_product` statement, and if the request is post then the HttpCreated response is returned. If the request is not post a 404 Not Found error message is shown.
+  After adding the function i head over to my `urls.py` in the `main` subdirectory and added the url routing to the `get_product` and the `add_product_ajax` function as well 
+3. Now i need to modify the `main.html` file in the the `templates` directory in side of the `main` directory
+ 
 
 
 
