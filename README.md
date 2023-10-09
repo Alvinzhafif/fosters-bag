@@ -261,9 +261,9 @@ In my opinion using `Fetch API` is better as it is more modern and suited to mod
 
     return HttpResponseNotFound()
 ```
-    this function implements `AJAX` for adding the products into the web page, if the request is post every fields data will then be retrieved and made into the product using the `      
-  `new_product` statement, and if the request is post then the HttpCreated response is returned. If the request is not post a 404 Not Found error message is shown.
-  After adding the function i head over to my `urls.py` in the `main` subdirectory and added the url routing to the `get_product` and the `add_product_ajax` function as well 
+
+this function implements `AJAX` for adding the products into the web page, if the request is post every fields data will then be retrieved and made into the product using the `     `new_product` statement, and if the request is post then the HttpCreated response is returned. If the request is not post a 404 Not Found error message is shown.
+After adding the function i head over to my `urls.py` in the `main` subdirectory and added the url routing to the `get_product` and the `add_product_ajax` function as well 
 3. Now i need to modify the `main.html` file in the the `templates` directory in side of the `main` directory
  
 
