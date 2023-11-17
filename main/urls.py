@@ -12,7 +12,7 @@ from main.views import delete_product
 from main.views import get_product_json
 from main.views import add_product_ajax
 from main.views import del_product_ajax
-
+from main.views import update_product_visibility
 app_name = 'main'
 
 urlpatterns = [
@@ -30,5 +30,6 @@ urlpatterns = [
     path('get-product/', get_product_json, name='get_product_json'),
     path('create-product-ajax/', add_product_ajax, name='add_product_ajax'),
     path('delete-product-ajax/<int:id>', del_product_ajax, name='del_product_ajax'),
+    path('api/update_product_visibility/<int:product_id>/', update_product_visibility, name='update_product_visibility'),
 
 ]

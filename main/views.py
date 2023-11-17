@@ -1,5 +1,5 @@
-from django.shortcuts import render
-from django.http import HttpResponseRedirect
+from django.shortcuts import get_object_or_404, render
+from django.http import HttpResponseRedirect, JsonResponse
 from django.urls import reverse
 from main.forms import ProductForm
 from main.models import Product
@@ -15,10 +15,9 @@ import datetime
 from django.http import HttpResponseRedirect,HttpResponseNotFound
 from django.urls import reverse
 from django.views.decorators.csrf import csrf_exempt
-
+from main.models import Product
 
 @login_required(login_url='/login')
-
 def show_main(request):
 
     products = Product.objects.filter(user=request.user)
@@ -30,7 +29,7 @@ def show_main(request):
         'lore': 'Foster is a merchant in the city of sorus, he is known to be the best trader in the city with never before seen items and weapons.However, currently he has problems with managing his inventory and needs your help',
         'categories': 'There are 4 item categories listed by Foster, Sword, Bow, Shields, and Throwables. Melee weapons will fall to the Sword category, bows and other long range weapon falls to the Bow category, armors and any other defense item falls to the Shield category, and throwable projectiles fall in the Throwables category. Any other types of item will be considered Miscellaneous. Recently added products will be marked with a red text below of the cards',
         'products': products,
-        'last_login': request.COOKIES['last_login'],
+        'last_login': request.COOKIES['last_login']
     }
 
     return render(request, 'main.html', context)
@@ -155,5 +154,11 @@ def del_product_ajax(request, id):
         return HttpResponse(b"DELETED",status = 201)
     return HttpResponseNotFound()
 
+def update_product_visibility(request, product_id):
+    product = get_object_or_404(Product, pk=product_id)
+    product.is_hidden = not product.is_hidden
+    product.save()
+
+    return JsonResponse({'success': True})
 
 # Create your views here.

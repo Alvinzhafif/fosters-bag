@@ -11,4 +11,5 @@ class Product(models.Model):
     description = models.TextField()
     type = models.CharField(max_length=255, null=True)
     rarity= models.CharField(max_length=255, null=True)
+    is_discount = models.BooleanField(default=False)
 # Create your models here.

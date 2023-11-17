@@ -61,6 +61,7 @@
   <p>Legendary</p>
 </div>
 
+    
 
 <table id="product_table"></table>
     <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -97,6 +98,10 @@
                       <label for="description" class="col-form-label">Rarity:</label>
                       <textarea class="form-control" id="rarity" name="rarity"></textarea>
                   </div>
+                    <div class="mb-3">
+                      <label for="description" class="col-form-label">Discount:</label>
+                      <textarea class="form-control" id="Discount" name="Discount"></textarea>
+                    </div>
                   </form>
               </div>
               <div class="modal-footer">
@@ -124,7 +129,12 @@
         let htmlString = ""
         products.forEach((item) => {
             htmlString += `\n<tr>
-              <div class="card" style="width: 18rem;">
+              `
+              if (item.fields.description != false){
+                var tr= $(this).closest('tr');
+                tr.prependTo(tr.closest('table'))
+              `
+              <div class="card" id="pp" style="width: 18rem;"
               `
               if (item.fields.type == "Sword") {
                 htmlString += `<p class="card-text">${item.fields.type}</p>
@@ -136,7 +146,7 @@
                 <img class="card-img-top" src="{% static 'main/bow.jpeg' %}" alt="Card image cap">
                 `
               }
-              else if (item.fields.type == "Throwable") {
+              else if (item.fields.type == "Throwables") {
                 htmlString += `<p class="card-text">${item.fields.type}</p>
                 <img class="card-img-top" src="{% static 'main/throwable.jpeg' %}" alt="Card image cap">
                 `
@@ -183,8 +193,11 @@
               `
                htmlString += '</div>'
             htmlString += '</div>'
-        htmlString += '</tr>' 
+        htmlString += '</tr>'
+              }
         })
+        
+      
         
         document.getElementById("product_table").innerHTML = htmlString
     }
